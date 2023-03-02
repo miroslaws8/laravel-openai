@@ -42,7 +42,7 @@ class OpenaiServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../../config/chatgpt-laravel.php' => config_path('laravel-openai.php'),
+            __DIR__.'/../../config/laravel-openai.php' => config_path('laravel-openai.php'),
         ], 'chatgpt-laravel.config');
     }
 }

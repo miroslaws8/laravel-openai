@@ -11,6 +11,18 @@ You can install the package via composer:
 composer require itsimiro/laravel-openai
 ```
 
+Publish the configuration file:
+
+```
+php artisan vendor:publish --provider="Itsimiro\OpenAI\Providers\OpenaiServiceProvider"
+```
+
+This will create a config/laravel-openai.php configuration file in your project. Be sure to specify the key in your environment file.
+
+```
+OPENAI_API_KEY=sk-*
+```
+
 ## Endpoint Support
 
 #### Available now:
@@ -59,6 +71,8 @@ $result = $openAI->getDavinci()->chat(new ChatParameters()); // Itsimiro\OpenAI\
 $result->getChoices(); // Choices from OpenAI.
 
 ```
+
+#### See the [documentation](https://platform.openai.com/docs/api-reference) for more details on using OpenAI.
 
 ## Testing
 
