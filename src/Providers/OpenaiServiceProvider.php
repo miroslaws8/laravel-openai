@@ -3,6 +3,8 @@
 namespace Itsimiro\OpenAI\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Itsimiro\OpenAI\Services\API\Auth\AuthService;
+use Itsimiro\OpenAI\Services\API\Auth\AuthServiceInterface;
 use Itsimiro\OpenAI\Services\OpenAI;
 
 class OpenaiServiceProvider extends ServiceProvider
@@ -22,6 +24,10 @@ class OpenaiServiceProvider extends ServiceProvider
         // Register the service the package provides.
         $this->app->singleton('laravel-openai', function ($app) {
             return new OpenAI($app);
+        });
+
+        $this->app->bind(AuthServiceInterface::class, function ($app) {
+            return new AuthService();
         });
     }
 
