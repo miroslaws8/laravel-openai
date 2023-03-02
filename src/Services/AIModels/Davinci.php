@@ -38,7 +38,7 @@ class Davinci
     public function chat(ChatParameters $parameters): ChatResult
     {
         return $this->apiService->getResult(
-            $this->apiService->sendRequest('POST', $this->urlService->completions(), $parameters->toArray()),
+            $this->apiService->sendRequest('POST', $this->urlService->chat(), $parameters->toArray()),
             ChatResult::class
         );
     }
