@@ -6,6 +6,6 @@ class AuthService
 {
     public function getToken(): string
     {
-        return config('laravel-openai.token');
+        return config('laravel-openai.api_key');
     }
 }
