@@ -2,7 +2,7 @@
 
 namespace Itsimiro\OpenAI\Services\API\Auth;
 
-class AuthService
+class AuthService implements AuthServiceInterface
 {
     public function getToken(): string
     {
