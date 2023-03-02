@@ -1,7 +1,6 @@
 # This is my package laravel-openai
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/itsimiro/laravel-openai.svg?style=flat-square)](https://packagist.org/packages/itsimiro/laravel-openai)
-[![Tests](https://img.shields.io/github/actions/workflow/status/itsimiro/laravel-openai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/itsimiro/laravel-openai/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/itsimiro/laravel-openai.svg?style=flat-square)](https://packagist.org/packages/itsimiro/laravel-openai)
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
