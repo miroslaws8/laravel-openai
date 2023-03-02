@@ -1,9 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Itsimiro\OpenAI\Tests;
 
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
 {
 }
+
