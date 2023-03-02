@@ -17,7 +17,7 @@ class OpenaiServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-openai.php', 'laravel-openai');
+        $this->mergeConfigFrom(__DIR__.'/../../config/laravel-openai.php', 'laravel-openai');
 
         // Register the service the package provides.
         $this->app->singleton('laravel-openai', function ($app) {
@@ -36,7 +36,7 @@ class OpenaiServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/chatgpt-laravel.php' => config_path('laravel-openai.php'),
+            __DIR__.'/../../config/chatgpt-laravel.php' => config_path('laravel-openai.php'),
         ], 'chatgpt-laravel.config');
     }
 }
