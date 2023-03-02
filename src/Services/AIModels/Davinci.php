@@ -6,9 +6,11 @@ use GuzzleHttp\Exception\GuzzleException;
 use Itsimiro\OpenAI\Services\API\ApiService;
 use Itsimiro\OpenAI\Services\API\Results\ChatResult;
 use Itsimiro\OpenAI\Services\API\Results\CompletionResult;
+use Itsimiro\OpenAI\Services\API\Results\EditsResult;
 use Itsimiro\OpenAI\Services\API\UrlService;
 use Itsimiro\OpenAI\Services\DataTransferObjects\ChatParameters;
-use Itsimiro\OpenAI\Services\DataTransferObjects\DavinciParameters;
+use Itsimiro\OpenAI\Services\DataTransferObjects\CompletionParameters;
+use Itsimiro\OpenAI\Services\DataTransferObjects\EditsParameters;
 
 class Davinci
 {
@@ -20,7 +22,7 @@ class Davinci
      *
      * @throws GuzzleException
      */
-    public function completion(DavinciParameters $parameters): CompletionResult
+    public function completion(CompletionParameters $parameters): CompletionResult
     {
         return $this->apiService->getResult(
             $this->apiService->sendRequest('POST', $this->urlService->completions(), $parameters->toArray()),
@@ -38,6 +40,19 @@ class Davinci
         return $this->apiService->getResult(
             $this->apiService->sendRequest('POST', $this->urlService->completions(), $parameters->toArray()),
             ChatResult::class
+        );
+    }
+
+    /**
+     * @see https://platform.openai.com/docs/api-reference/edits
+     *
+     * @throws GuzzleException
+     */
+    public function edits(EditsParameters $parameters): EditsResult
+    {
+        return $this->apiService->getResult(
+            $this->apiService->sendRequest('POST', $this->urlService->edits(), $parameters->toArray()),
+            EditsResult::class
         );
     }
 }

@@ -4,14 +4,14 @@ namespace Itsimiro\OpenAI\Services\DataTransferObjects;
 
 use Spatie\LaravelData\Data;
 
-class DavinciParameters extends Data
+class CompletionParameters extends Data
 {
     public function __construct(
-        public string $modelName,
         public string $prompt,
-        public int $maxTokens = 10,
+        public string $model = 'text-davinci-003',
+        public int $max_tokens = 10,
         public int $temperature = 0,
-        public int $topP = 1,
+        public int $top_p = 1,
         public string $stop = '\n',
     )
     {}

@@ -1,6 +1,7 @@
-# This is laravel-openai
+# Laravel OpenAI
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+A laravel package to integrate openai in laravel application.
+
 
 ## Installation
 
@@ -10,11 +11,53 @@ You can install the package via composer:
 composer require itsimiro/laravel-openai
 ```
 
+## Endpoint Support
+
+#### Available now:
+
+* Completions
+  * [Create completion](https://platform.openai.com/docs/api-reference/completions/create)
+* Chat
+  * [Create chat completion](https://platform.openai.com/docs/api-reference/chat/create)
+* Edits
+  * [Create edit](https://platform.openai.com/docs/api-reference/edits/create)
+
+#### Coming soon:
+
+* Models
+  * List models
+  * Retrieve model
+* Images
+  * Create image
+  * Create image edit
+* Audio
+  * Create transcription
+  * Create translation
+* Embeddings
+  * Create embeddings
+
 ## Usage
 
+#### Create completion:
+
 ```php
-$skeleton = new Itsimiro\OpenAI();
-echo $skeleton->echoPhrase('Hello, Itsimiro!');
+$openAI = $this->container->make(\Itsimiro\OpenAI\Services\OpenAI::class);
+
+$result = $openAI->getDavinci()->completion(new \Itsimiro\OpenAI\Services\DataTransferObjects\CompletionParameters()); // Itsimiro\OpenAI\Services\API\Results\CompletionResult
+
+$result->getChoices(); // Choices from OpenAI.
+
+```
+
+#### Create chat:
+
+```php
+$openAI = $this->container->make(\Itsimiro\OpenAI\Services\OpenAI::class);
+
+$result = $openAI->getDavinci()->chat(new ChatParameters()); // Itsimiro\OpenAI\Services\API\Results\CompletionResult
+
+$result->getChoices(); // Choices from OpenAI.
+
 ```
 
 ## Testing

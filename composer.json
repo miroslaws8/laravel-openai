@@ -1,9 +1,12 @@
 {
     "name": "itsimiro/laravel-openai",
-    "description": "A laravel package to integrate openai api in laravel application",
+    "description": "A laravel package to integrate openai in laravel application",
     "keywords": [
         "itsimiro",
-        "laravel-openai"
+        "laravel-openai",
+        "openai",
+        "open-ai",
+        "laravel"
     ],
     "homepage": "https://github.com/itsimiro/laravel-openai",
     "license": "MIT",
@@ -36,6 +39,7 @@
         }
     },
     "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true,

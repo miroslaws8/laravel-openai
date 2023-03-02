@@ -13,22 +13,20 @@ class ApiService
 {
     public function __construct(
         private readonly Client $client,
-        private readonly AuthServiceInterface $authService,
-        private readonly UrlService $urlService
+        private readonly AuthServiceInterface $authService
     )
     {}
 
     /**
      * @throws GuzzleException
      */
-    public function sendRequest(string $method, string $endpoint, array $parameters = []): ResponseInterface
+    public function sendRequest(string $method, string $url, array $parameters = []): ResponseInterface
     {
-        $parameters['headers'] = [
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer '.$this->authService->getToken(),
-        ];
-
-        return $this->client->request($method, $this->urlService->buildUrl($endpoint), [
+        return $this->client->request($method, $url, [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer '.$this->authService->getToken(),
+            ],
             'json' => $parameters
         ]);
     }
@@ -47,6 +45,6 @@ class ApiService
             throw new InvalidArgumentException('Invalid response.');
         }
 
-        return new $resultClass($result['data']);
+        return new $resultClass($result);
     }
 }
