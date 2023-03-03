@@ -2,9 +2,11 @@
 
 A laravel package to integrate openai in laravel application.
 
+
+
 <p align="left">
     <a href="https://github.com/miroslaws8/laravel-openai/actions"><img alt="GitHub Workflow Status (master)" src="https://github.com/miroslaws8/laravel-openai/actions/workflows/test.yml/badge.svg"></a>
-    <a href="https://packagist.org/packages/itsimiro/laravel-openai"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/itsimiro/laravel-openai"></a>
+    <img alt="Packagist Downloads" src="https://img.shields.io/packagist/dm/itsimiro/laravel-openai">
     <a href="https://packagist.org/packages/itsimiro/laravel-openai"><img alt="Latest Version" src="https://img.shields.io/packagist/v/itsimiro/laravel-openai"></a>
 </p>
 
