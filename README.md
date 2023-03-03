@@ -2,9 +2,10 @@
 
 A laravel package to integrate openai in laravel application.
 
-[![Packagist Downloads](https://img.shields.io/packagist/dt/itsimiro/laravel-openai.svg)](https://packagist.org/packages/itsimiro/laravel-openai)
-
-[![Packagist Tests](https://img.shields.io/badge/tests-100%25-brightgreen.svg)](https://packagist.org/packages/itsimiro/laravel-openai)
+<p align="left">
+    <a href="https://packagist.org/packages/itsimiro/laravel-openai"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/itsimiro/laravel-openai"></a>
+    <a href="https://packagist.org/packages/itsimiro/laravel-openai"><img alt="Latest Version" src="https://img.shields.io/packagist/v/itsimiro/laravel-openai"></a>
+</p>
 
 ## Installation
 
