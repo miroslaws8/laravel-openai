@@ -55,4 +55,34 @@ class Davinci
             EditsResult::class
         );
     }
+
+    /**
+     * @throws GuzzleException
+     */
+    public function createTitleSummaryByUrl(string $url, int $length = 20): ChatResult
+    {
+        return $this->chat(ChatParameters::from([
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => "Create a short page title summary up to $length characters based on this website: $url"
+                ]
+            ]
+        ]));
+    }
+
+    /**
+     * @throws GuzzleException
+     */
+    public function createDescriptionByUrl(string $url, int $length = 150): ChatResult
+    {
+        return $this->chat(ChatParameters::from([
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => "Create a short page description up to $length characters based on this website: $url"
+                ]
+            ]
+        ]));
+    }
 }
