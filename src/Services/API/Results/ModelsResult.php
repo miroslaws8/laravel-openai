@@ -2,16 +2,18 @@
 
 namespace Itsimiro\OpenAI\Services\API\Results;
 
+use Illuminate\Support\Collection;
 use Spatie\LaravelData\Data;
-use Spatie\LaravelData\DataCollection;
 
 class ModelsResult extends Data implements ResultInterface
 {
     public function __construct(public array $result)
     {}
 
-    public function getModels(): DataCollection
+    public function getModels(): Collection
     {
-        return ModelResult::collection($this->result['data']);
+        return Collection::make($this->result['data'])->map(
+            fn (array $item) => new ModelResult($item)
+        );
     }
 }

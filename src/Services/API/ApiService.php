@@ -22,13 +22,18 @@ class ApiService
      */
     public function sendRequest(string $method, string $url, array $parameters = []): ResponseInterface
     {
-        return $this->client->request($method, $url, [
+        $requestParams = [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer '.$this->authService->getToken(),
-            ],
-            'json' => $parameters
-        ]);
+            ]
+        ];
+
+        if ($parameters) {
+            $requestParams['json'] = $parameters;
+        }
+
+        return $this->client->request($method, $url, $requestParams);
     }
 
     public function getResult(ResponseInterface $response, string $resultClass): ResultInterface
