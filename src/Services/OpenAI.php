@@ -6,6 +6,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Container\Container;
 use Itsimiro\OpenAI\Services\AIModels\Dalle;
 use Itsimiro\OpenAI\Services\AIModels\Davinci;
+use Itsimiro\OpenAI\Services\AIModels\General;
 use Itsimiro\OpenAI\Services\AIModels\Whisper;
 
 class OpenAI
@@ -35,5 +36,13 @@ class OpenAI
     public function getWhisper(): Whisper
     {
         return $this->container->make(Whisper::class);
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    public function getGeneral(): General
+    {
+        return $this->container->make(General::class);
     }
 }
