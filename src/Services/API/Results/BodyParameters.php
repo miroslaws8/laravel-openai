@@ -10,4 +10,6 @@ class BodyParameters
     public const MODEL = 'model';
     public const CHOICES = 'choices';
     public const USAGE = 'usage';
+    public const OWNER_BY = 'owned_by';
+    public const PERMISSIONS = 'permissions';
 }
