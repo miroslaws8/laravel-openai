@@ -40,12 +40,12 @@ OPENAI_API_KEY=sk-*
   * [Create chat completion](https://platform.openai.com/docs/api-reference/chat/create)
 * Edits
   * [Create edit](https://platform.openai.com/docs/api-reference/edits/create)
+* Models
+  * [List models](https://platform.openai.com/docs/api-reference/models/list)
+  * [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve)
+
 
 #### Coming soon:
-
-* Models
-  * List models
-  * Retrieve model
 * Images
   * Create image
   * Create image edit
