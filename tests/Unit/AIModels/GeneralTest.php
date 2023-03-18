@@ -3,6 +3,7 @@
 namespace Unit\AIModels;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Support\Collection;
 use Itsimiro\OpenAI\Services\AIModels\General;
 use Itsimiro\OpenAI\Services\API\ApiService;
 use Itsimiro\OpenAI\Services\API\Results\ModelResult;
@@ -24,9 +25,8 @@ class GeneralTest extends TestCase
 
         $expectedModel = $this->getMockModel();
 
-        $dataCollection = $this->getMockBuilder(DataCollection::class)
+        $dataCollection = $this->getMockBuilder(Collection::class)
             ->setConstructorArgs([
-                'dataClass' => ModelResult::class,
                 'items' => []
             ])->getMock();
 
