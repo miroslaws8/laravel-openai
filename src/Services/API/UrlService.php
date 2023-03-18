@@ -34,7 +34,7 @@ class UrlService
         return $this->buildUrl('/fine-tunes');
     }
 
-    public function fineTuneModel(): string
+    public function models(): string
     {
         return $this->buildUrl('/models');
     }
