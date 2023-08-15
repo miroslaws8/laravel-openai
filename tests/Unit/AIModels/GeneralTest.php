@@ -11,7 +11,6 @@ use Itsimiro\OpenAI\Services\API\Results\ModelsResult;
 use Itsimiro\OpenAI\Services\API\UrlService;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
-use Spatie\LaravelData\DataCollection;
 
 class GeneralTest extends TestCase
 {

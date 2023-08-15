@@ -2,11 +2,23 @@
 
 namespace Itsimiro\OpenAI\Services\API\Results;
 
+use Itsimiro\OpenAI\Services\API\Constants\BodyParameters;
 use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Attributes\Validation\ArrayType;
 
 class CompletionResult extends Data implements ResultInterface
 {
-    public function __construct(public array $result)
+    public function __construct(
+        #[ArrayType([
+            BodyParameters::ID,
+            BodyParameters::OBJECT,
+            BodyParameters::CREATED_AT,
+            BodyParameters::MODEL,
+            BodyParameters::CHOICES,
+            BodyParameters::USAGE
+        ])]
+        public array $result
+    )
     {}
 
     public function getId(): string
