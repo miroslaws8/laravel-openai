@@ -3,11 +3,20 @@
 namespace Itsimiro\OpenAI\Services\API\Results;
 
 use Illuminate\Support\Arr;
+use Itsimiro\OpenAI\Services\API\Constants\BodyParameters;
+use Spatie\LaravelData\Attributes\Validation\ArrayType;
 use Spatie\LaravelData\Data;
 
 class ModelResult extends Data implements ResultInterface
 {
-    public function __construct(public array $result)
+    public function __construct(
+        #[ArrayType([
+            BodyParameters::ID,
+            BodyParameters::OBJECT,
+            BodyParameters::OWNER_BY
+        ])]
+        public array $result
+    )
     {}
 
     public function getId(): string

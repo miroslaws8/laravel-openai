@@ -46,6 +46,13 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itsimiro\\OpenAI\\Providers\\OpenaiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

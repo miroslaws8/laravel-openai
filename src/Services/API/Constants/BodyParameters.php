@@ -1,6 +1,6 @@
 <?php
 
-namespace Itsimiro\OpenAI\Services\API\Results;
+namespace Itsimiro\OpenAI\Services\API\Constants;
 
 class BodyParameters
 {

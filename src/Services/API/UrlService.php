@@ -44,9 +44,9 @@ class UrlService
         return $this->buildUrl('/answers');
     }
 
-    public function images(): string
+    public function createImage(): string
     {
-        return $this->buildUrl('/images');
+        return $this->buildUrl('/images/generations');
     }
 
     public function embeddings(): string
