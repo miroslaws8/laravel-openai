@@ -13,7 +13,7 @@ class CreateImageParameters extends Data
         public int $imageCount = 1,
         public ImageSizeEnum $size = ImageSizeEnum::LARGE,
         public ImageResponseFormatEnum $responseFormat = ImageResponseFormatEnum::URL,
-        public ?string $user = null
+        public string $user = ''
     )
     {}
 

@@ -43,11 +43,11 @@ OPENAI_API_KEY=sk-*
 * Models
   * [List models](https://platform.openai.com/docs/api-reference/models/list)
   * [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve)
-
+* Images
+  * [Create image](https://platform.openai.com/docs/api-reference/images/create)
 
 #### Coming soon:
 * Images
-  * Create image
   * Create image edit
 * Audio
   * Create transcription
@@ -77,6 +77,21 @@ $result = $openAI->getDavinci()->chat(new ChatParameters()); // Itsimiro\OpenAI\
 
 $result->getChoices(); // Choices from OpenAI.
 
+```
+
+#### Create image:
+
+```php
+$openAI = $this->container->make(\Itsimiro\OpenAI\Services\OpenAI::class);
+
+
+$result = $openAI->getDalle()->createImage(new CreateImageParameters(
+  'dog with a bone',
+  2,
+  responseFormat: ImageResponseFormatEnum::URL
+ ));
+
+$result->getImages(); // Generated images
 ```
 
 #### See the [documentation](https://platform.openai.com/docs/api-reference) for more details on using OpenAI.
